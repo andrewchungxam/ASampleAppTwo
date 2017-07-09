@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using ASampleApp.Models;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
+using System.Windows.Input;
+using System;
+using System.Diagnostics;
 
 namespace ASampleApp
 {
@@ -8,6 +12,10 @@ namespace ASampleApp
 	{
 
 		ObservableCollection<Dog> _observableCollectionOfDogs;
+
+        public ICommand DeleteDogFromListCommand { get; set; }
+
+
 
 		public DogListPhotoViewModel ()
 		{
@@ -20,9 +28,20 @@ namespace ASampleApp
 			foreach (var item in list)
 				_observableCollectionOfDogs.Add (item);
 
+            DeleteDogFromListCommand = new Command(DeleteDogFromListAction);
+
 		}
 
-		public ObservableCollection<Dog> ObservableCollectionOfDogs {
+        private void DeleteDogFromListAction(object obj)
+        {
+            Debug.WriteLine("DELETE DOG FROM LIST ACTION");
+
+            var myItem = obj as Dog;
+            _observableCollectionOfDogs.Remove(myItem);
+
+        }
+
+        public ObservableCollection<Dog> ObservableCollectionOfDogs {
 			get { return _observableCollectionOfDogs; }
 			set { SetProperty (ref _observableCollectionOfDogs, value); }
 		}

@@ -30,8 +30,8 @@ namespace ASampleApp
 			//		}
 			//	}
 			//};
-
-			MainPage = new NavigationPage (applicationStartPage);
+            var myNavigationPage = new NavigationPage(applicationStartPage);
+            MainPage = myNavigationPage;
 		}
 
 		protected override void OnStart ()
