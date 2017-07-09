@@ -25,6 +25,12 @@ namespace ASampleApp.Data
 
 		}
 
+		public void DeleteDog(Dog dog)
+		{
+           sqliteConnection.Delete(dog);
+
+		}
+
 		public void AddNewDogPhotoURL (string name, string furColor, string dogURL)
 		{
 			sqliteConnection.Insert (new Dog { Name = name, FurColor = furColor, DogPictureURL = dogURL });

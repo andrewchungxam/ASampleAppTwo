@@ -145,8 +145,8 @@ namespace ASampleApp
 
             var selectedModel = myMenuItem.BindingContext as Dog;
 
-            //DELETE FROM DATABASE - AND THEN REFRESH THE DATA
-           // App.DogRep.DeleteDog(selectedModel);
+            //DELETE FROM DATABASE - AND BEFORE REFRESH THE DATA SOURCE ON THE UI 
+            App.DogRep.DeleteDog(selectedModel);
 
 			//Wait for the iOS animation to finish
 			switch (Device.RuntimePlatform)
