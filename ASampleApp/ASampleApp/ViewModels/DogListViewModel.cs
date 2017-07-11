@@ -1,6 +1,19 @@
-﻿using System;
+﻿//
+// PLEASE USE DOGLISTMVVMPAGE INSTEAD
+//
+//
+//
+//
+//
+//
+
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using ASampleApp.Models;
+using Xamarin.Forms;
+
+
 namespace ASampleApp
 {
 	public class DogListViewModel : BaseViewModel
